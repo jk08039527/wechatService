@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">wechatService</string>
+    <string name="accessibility_service_description">accessibility</string>
+</resources>
