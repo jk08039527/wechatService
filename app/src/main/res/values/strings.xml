@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">wechatService</string>
-    <string name="accessibility_service_description">accessibility</string>
+    <string name="accessibility_service_description">微信监听</string>
+    <string name="load_failed">加载失败</string>
+    <string name="loading">正在加载…</string>
+    <string name="no_more_data">我是有底线的</string>
+    <string name="null_data">暂无内容</string>
+    <string name="null_search_record">还没有搜索记录</string>
+    <string name="pull_to_refresh_complete">更新完成</string>
+    <string name="pull_to_refresh_pull_label">下拉刷新…</string>
+    <string name="pull_to_refresh_refreshing_label">正在载入…</string>
+    <string name="pull_to_refresh_release_label">放开以刷新…</string>
+    <string name="reload">重新加载</string>
 </resources>

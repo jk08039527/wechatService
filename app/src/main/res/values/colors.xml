@@ -1,6 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="black">#000000</color>
+    <!-- 主题色 -->
+    <color name="title_background_color">#bf0000</color><!-- 主题色 -->
+    <color name="colorPrimary">#FF6633</color>
+    <color name="colorPrimaryDark">#D54616</color>
+    <color name="colorAccent">#FF4081</color>
+    <!-- 背景色 -->
+    <color name="white">#ffffffff</color>
+    <color name="white_pressed">#EEEEEE</color>
+    <color name="white_80alpha">#80ffffff</color>
+    <color name="main_tab_normal">#8D8D8D</color>
+    <color name="black_80alpha">#80000000</color>
+    <color name="black_4dalpha">#4d000000</color>
+    <!--<color name="main_tab_checked">#CD5757</color>-->
+    <color name="grey">#d0cfce</color>
+    <color name="btn_pressed_bg">#cb7f7f</color>
+    <color name="up_color">#dd2200</color>
+    <color name="down_color">#33aa11</color>
+    <color name="black_40alpha">#40000000</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="red_primary">#ff4f4c</color>
+    <color name="red_pressed">#e1463f</color>
+    <color name="red_disable">#ffb2ae</color>
+    <color name="yellow_ff9c00">#ff9c00</color>
+    <color name="yellow_ffd863">#ffd863</color>
+    <color name="yellow_ffdd33">#ffdd33</color>
+    <color name="yellow_ffe87f">#ffe87f</color>
+    <color name="yellow_dcd3b3">#dcd3b3</color>
+    <color name="grey_text">#f2f2f2</color>
+    <color name="yellow_806000">#806000</color>
+    <color name="dark_blue">#abc0d5</color>
+    <color name="blue_primary">#4ca6ff</color>
+    <color name="blue_second">#5782ac</color>
+    <color name="blue_004eff">#004eff</color>
+    <color name="primary_text_color">#333333</color>
+    <color name="second_text_color">#666666</color>
+    <color name="light_text_color">#999999</color>
+    <color name="hint_text_color">#d7d7d7</color>
+    <color name="gray_f7">#f7f7f7</color>
+    <color name="gray_c">#ccc</color>
+    <color name="gray_d">#ddd</color>
+    <color name="gray_bg">#f2f5f7</color>
+    <color name="gray_bg_pressed">#dfdfdf</color>
+    <color name="gray_line_color_primary">#d8d8d8</color>
+    <color name="white_auxiliary">#fffdeb</color>
+
+    <color name="color_ma5">#1aadce</color>
+    <color name="color_ma10">#8bbc21</color>
+    <color name="color_ma30">#910000</color>
+    <color name="hasbuy">#5C3A70</color>
+    <drawable name="transparent_drawable">#00000000</drawable>
+
+    <color name="c_f8f8f8">#f8f8f8</color>
+    <color name="c_0ac93a">#0ac93a</color>
+    <color name="c_fbc3c0">#fbc3c0</color>
 </resources>
