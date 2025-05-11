@@ -35,7 +35,7 @@ import java.util.List;
 /**
  * @author Jerry
  * @createDate 2019-04-23
- * @copyright www.aniu.tv
+ * @copyright www.axiang.com
  * @description
  */
 public class MainActivity extends AppCompatActivity implements BaseRecyclerAdapter.OnItemClickListener {
@@ -151,7 +151,11 @@ public class MainActivity extends AppCompatActivity implements BaseRecyclerAdapt
                         if (records == null) {
                             return;
                         }
-                        mData.addAll(records);
+                        for (Record record : records) {
+                            if (record.getNickname().startsWith("Pix")) {
+                                mData.add(record);
+                            }
+                        }
                         mAdapter.notifyDataSetChanged();
                     }
                 });

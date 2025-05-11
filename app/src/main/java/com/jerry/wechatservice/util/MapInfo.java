@@ -5,7 +5,7 @@ import java.util.LinkedList;
 /**
  * @author Jerry
  * @createDate 2019/4/10
- * @copyright www.aniu.tv
+ * @copyright www.axiang.com
  * @description 单条记录
  */
 public class MapInfo {

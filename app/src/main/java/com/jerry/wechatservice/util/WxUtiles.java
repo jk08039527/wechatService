@@ -20,7 +20,7 @@ import java.util.List;
 
 public class WxUtiles {
     private static SQLiteDatabaseHook hook;
-    private static List<File> mWxDbPathList = new ArrayList();
+    private static final List<File> mWxDbPathList = new ArrayList<>();
 
     public WxUtiles() {
     }
@@ -75,6 +75,7 @@ public class WxUtiles {
                 c1 = db.rawQuery("select * from message where type = 1 and talker = '" + username + "'", null);
                 while (c1.moveToNext()) {
                     Record record = new Record();
+                    record.setMsgId(c1.getString(c1.getColumnIndex("msgId")));
                     record.setTalker(c1.getString(c1.getColumnIndex("talker")));
                     record.setContent(c1.getString(c1.getColumnIndex("content")));
                     record.setCreateTime(c1.getString(c1.getColumnIndex("createTime")));

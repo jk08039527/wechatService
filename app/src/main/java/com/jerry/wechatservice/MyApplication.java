@@ -6,7 +6,7 @@ import android.app.Application;
 /**
  * @author Jerry
  * @createDate 2019/4/10
- * @copyright www.aniu.tv
+ * @copyright www.axiang.com
  * @description
  */
 public class MyApplication extends Application {

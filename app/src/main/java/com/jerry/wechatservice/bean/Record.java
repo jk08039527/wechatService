@@ -3,10 +3,11 @@ package com.jerry.wechatservice.bean;
 /**
  * @author Jerry
  * @createDate 2019/4/10
- * @copyright www.aniu.tv
+ * @copyright www.axiang.com
  * @description 一条记录
  */
 public class Record {
+    private String msgId;
     private String content;
     private String createTime;
     private int isSend;
@@ -15,6 +16,14 @@ public class Record {
     private String username;
 
     public Record() {
+    }
+
+    public String getMsgId() {
+        return msgId;
+    }
+
+    public void setMsgId(String msgId) {
+        this.msgId = msgId;
     }
 
     public String getContent() {

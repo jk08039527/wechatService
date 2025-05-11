@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * @author Jerry
  * @createDate 2019-04-23
- * @copyright www.aniu.tv
+ * @copyright www.axiang.com
  * @description
  */
 public class ContactAdapter extends BaseRecyclerAdapter<Record> {
