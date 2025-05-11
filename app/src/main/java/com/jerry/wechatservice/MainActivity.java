@@ -3,9 +3,11 @@ package com.jerry.wechatservice;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 
@@ -43,7 +45,8 @@ public class MainActivity extends AppCompatActivity implements BaseRecyclerAdapt
     //拷贝到sd卡目录上
     String copyFilePath = mCurrApkPath + COPY_WX_DATA_DB;
 
-    private int REQUEST_PERMISSION = 144;
+    private static final int REQUEST_PERMISSION = 144;
+    private static final int REQUEST_MANAGER_PERMISSION = 145;
     private SQLiteDatabase db;
     protected BaseRecyclerAdapter<Record> mAdapter;
     protected List<Record> mData = new ArrayList<>();
@@ -96,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements BaseRecyclerAdapt
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission
                     .READ_PHONE_STATE}, REQUEST_PERMISSION);
         } else {
-            connectDatabase();
+            requestManagerPermission();
         }
     }
 
@@ -104,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements BaseRecyclerAdapt
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == REQUEST_PERMISSION) {
             if ((grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-                connectDatabase();
+                requestManagerPermission();
             }
         } else {
             onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -161,5 +164,32 @@ public class MainActivity extends AppCompatActivity implements BaseRecyclerAdapt
         Intent var3 = new Intent(this, ChatActivity.class);
         var3.putExtra("talker", ((Record) this.mData.get(i)).getUsername());
         this.startActivity(var3);
+    }
+
+    private void requestManagerPermission() {
+        //当系统在11及以上
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            // 没文件管理权限时申请权限
+            if (!Environment.isExternalStorageManager()) {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+                intent.setData(Uri.parse("package:" + getPackageName()));
+                startActivityForResult(intent, REQUEST_MANAGER_PERMISSION);
+                return;
+            }
+        }
+        connectDatabase();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_MANAGER_PERMISSION && Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            //用户拒绝权限，重新申请
+            if (!Environment.isExternalStorageManager()) {
+                requestManagerPermission();
+            } else {
+                connectDatabase();
+            }
+        }
     }
 }
