@@ -1,9 +1,10 @@
 package com.jerry.wechatservice.ptrlib;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.ListView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 public class PtrDefaultHandler implements PtrHandler {
 

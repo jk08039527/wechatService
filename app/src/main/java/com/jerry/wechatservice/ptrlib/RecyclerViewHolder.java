@@ -1,8 +1,9 @@
 package com.jerry.wechatservice.ptrlib;
 
-import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.View;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by wzl on 2018/8/10.

@@ -13,7 +13,7 @@
     app:ptr_ratio_of_header_height_to_refresh="1.2"
     app:ptr_resistance="1.7">
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@id/recyclerView"
         style="@style/custom_scrollbar_style"
         android:layout_width="fill_parent"

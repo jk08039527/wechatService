@@ -4,15 +4,15 @@ package com.jerry.wechatservice.ptrlib.widget;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
-import android.support.annotation.ColorRes;
-import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.LayoutManager;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
+
+import androidx.annotation.ColorRes;
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.jerry.wechatservice.R;
 import com.jerry.wechatservice.ptrlib.BaseRecyclerAdapter;
@@ -35,7 +35,7 @@ public class PtrRecyclerView extends FrameLayout {
     private View mFooterView;
     protected PtrFrameLayout mPtrFrameLayout;
     protected WeakHandler mWeakHandler;
-    protected LayoutManager mLayoutManager;
+    protected RecyclerView.LayoutManager mLayoutManager;
     protected OnRefreshListener mOnRefreshListener;
     private OnLoadMoreListener mOnLoadMoreListener;
     public boolean canRefresh = true;
@@ -91,7 +91,7 @@ public class PtrRecyclerView extends FrameLayout {
         setAdapterOnLoadMore(adapter, null);
     }
 
-    public LayoutManager initLayoutManager() {
+    public RecyclerView.LayoutManager initLayoutManager() {
         return new LinearLayoutManager(getContext());
     }
 

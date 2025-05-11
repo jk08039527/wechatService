@@ -5,9 +5,11 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.os.SystemClock;
-import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
+
+import androidx.core.content.ContextCompat;
+
 import com.jerry.wechatservice.R;
 import com.jerry.wechatservice.util.DisplayUtil;
 

@@ -1,9 +1,10 @@
 package com.jerry.wechatservice;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.jerry.wechatservice.asyctask.AsycTask;
 import com.jerry.wechatservice.bean.Record;
@@ -51,10 +52,12 @@ public class ChatActivity extends AppCompatActivity {
         }).whenDone(result -> {
             if (db != null) {
                 WxUtiles.getMessageData(db, talker, new WxUtiles.DataCallback<Record>() {
+                    @Override
                     public void onError(String var1) {
                         Toast.makeText(ChatActivity.this, "查询聊天记录失败", Toast.LENGTH_SHORT).show();
                     }
 
+                    @Override
                     public void onResult(List<Record> records) {
                         mData.clear();
                         if (records != null) {

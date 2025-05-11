@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Rect;
-import android.support.annotation.DimenRes;
 import android.view.View;
+
+import androidx.annotation.DimenRes;
+
 import com.jerry.wechatservice.MyApplication;
 
 import java.lang.reflect.Method;
